@@ -388,6 +388,9 @@ const app = {
 
     },
     setConfig: function (key, value) {
+        if (!this.config) {
+            this.config = {}
+        }
         this.config[key] = value;
         localStorage.setItem(PLAYER_CONFIG, JSON.stringify(this.config))
     },
@@ -397,7 +400,7 @@ const app = {
             this.isRandom = this.config.isRandom;
             this.isRepeat = this.config.isRepeat;
         } else {
-
+            this.config = {}
         }
     },
     start: function () {
