@@ -283,6 +283,7 @@ const app = {
         shuffleBtn.onclick = function () {
             if (_this.isRandom) {
                 shuffleBtn.classList.remove('active')
+
             } else {
                 shuffleBtn.classList.add('active')
 
@@ -294,6 +295,8 @@ const app = {
             }
             _this.isRandom = !_this.isRandom;
             _this.setConfig('isRandom', _this.isRandom)
+            _this.render()
+
 
         }
 
